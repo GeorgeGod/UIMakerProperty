@@ -18,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    NSLog(@"Maker Version is %lf", UIMakerVersionNumber);
+    
     UIView.maker.setFrame(CGRectMake(100, 100, 100, 100)).setBackgroundColor([UIColor redColor]).setSuperView(self.view).setAlpha(0.5);
 
     UILabel.maker.setFrame(CGRectMake(100, 220, 100, 100)).setBackgroundColor([UIColor greenColor]).setSuperView(self.view).setText(@"ssa");
@@ -46,7 +48,11 @@
 
 -(void)btnAction:(UIButton *)sender {
     NSLog(@"=====aa");
+    [self setFrame:(CGRect){0, 0, 100, 100}];
 }
 
+-(void)setFrame:(CGRect)rect {
+    
+}
 
 @end

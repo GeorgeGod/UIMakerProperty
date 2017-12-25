@@ -140,5 +140,16 @@
         return self;
     };
 }
-
+#ifdef MAS_VIEW
+-(UIView *(^)(UIViewConstraint))setConstraint {
+    return ^(UIViewConstraint make) {
+        if (self.superview) {
+            [self mas_makeConstraints:make];
+        } else {
+            NSLog(@"对象: %@ 没有添加到父视图上，所以不能添加布局", self);
+        }
+        return self;
+    };
+}
+#endif
 @end

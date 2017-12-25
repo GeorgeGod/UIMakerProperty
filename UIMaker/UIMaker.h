@@ -11,7 +11,7 @@
 
 
 //! Project version number for UIMaker.
-FOUNDATION_EXPORT double UIMakerVersionNumber;
+FOUNDATION_EXPORT double UIMakerVersionNumber = 1;
 
 //! Project version string for UIMaker.
 FOUNDATION_EXPORT const unsigned char UIMakerVersionString[];

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Masonry.h"
+#ifdef MAS_VIEW
+typedef void(^UIViewConstraint)(MASConstraintMaker *make);
+#endif
 typedef void(^UIViewCallBack)(UIView *view);
 @interface UIView (UIMaker)
 
@@ -28,4 +31,7 @@ typedef void(^UIViewCallBack)(UIView *view);
 @property (nonatomic, copy, readonly) UIView *(^setTapAction)(UIViewCallBack);
 @property (nonatomic, copy, readonly) UIView *(^setTargetAndAction)(id, SEL);
 @property (nonatomic, copy, readonly) UIView *(^setSuperView)(UIView *);
+#ifdef MAS_VIEW
+@property (nonatomic, copy, readonly) UIView *(^setConstraint)(UIViewConstraint);
+#endif
 @end
