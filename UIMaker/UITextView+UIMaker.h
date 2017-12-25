@@ -12,93 +12,32 @@
 
 +(instancetype)maker;
 
-
-/**
- 设置frame
- */
--(UITextView *(^)(CGRect))setFrame;
-
-/**
- 设置背景色
- */
--(UITextView *(^)(UIColor *))setBackgroundColor;
-
-/**
- 设置透明度
- */
--(UITextView *(^)(CGFloat))setAlpha;
-
-/**
- 设置是否隐藏
- */
--(UITextView *(^)(BOOL))setHidden;
-
-/**
- 设置圆角
- */
--(UITextView *(^)(CGFloat))setCornerRadius;
-
-/**
- 设置边框
- */
--(UITextView *(^)(CGFloat, UIColor *))setBorder;
-
-/**
- 设置边框宽度
- */
--(UITextView *(^)(CGFloat))setBorderWidth;
-
-/**
- 设置边框颜色
- */
--(UITextView *(^)(UIColor *))setBorderColor;
-
-/**
- 设置tag值
- */
--(UITextView *(^)(NSInteger))setTag;
-
-/**
- 设置内容显示模式
- */
--(UITextView *(^)(UIViewContentMode))setContentMode;
-
-/**
- 设置是否可触摸
- */
--(UITextView *(^)(BOOL))setUserInterface;
-
-/**
- 设置是否裁剪
- */
--(UITextView *(^)(BOOL))setClipsToBounds;
-
-/**
- 设置是否可用
- */
--(UITextView *(^)(BOOL))setEnabled;
-
-/**
- 添加到父视图上
- */
--(UITextView *(^)(UIView *))setSuperView;
-
-
-
-
+@property (nonatomic, copy, readonly) UITextView *(^setFrame)(CGRect);
+@property (nonatomic, copy, readonly) UITextView *(^setBackgroundColor)(UIColor *);
+@property (nonatomic, copy, readonly) UITextView *(^setAlpha)(CGFloat);
+@property (nonatomic, copy, readonly) UITextView *(^setHidden)(BOOL);
+@property (nonatomic, copy, readonly) UITextView *(^setCornerRadius)(CGFloat);
+@property (nonatomic, copy, readonly) UITextView *(^setBorder)(CGFloat, UIColor *);
+@property (nonatomic, copy, readonly) UITextView *(^setBorderWidth)(CGFloat);
+@property (nonatomic, copy, readonly) UITextView *(^setBorderColor)(UIColor *);
+@property (nonatomic, copy, readonly) UITextView *(^setTag)(NSInteger);
+@property (nonatomic, copy, readonly) UITextView *(^setContentMode)(UIViewContentMode);
+@property (nonatomic, copy, readonly) UITextView *(^setUserInterface)(BOOL);
+@property (nonatomic, copy, readonly) UITextView *(^setClipsToBounds)(BOOL);
+//@property (nonatomic, copy, readonly) UITextView *(^setTapAction)(UITextFieldCallBack);
+@property (nonatomic, copy, readonly) UITextView *(^setSuperView)(UIView *);
 
 
 /*** 上面是继承UIView的 ****/
 /*** 下面才是UITextView独有的 ****/
 
--(UITextView *(^)(NSString *))setText;
--(UITextView *(^)(NSAttributedString *))setAttrText;
--(UITextView *(^)(UIColor *))setTextColor;
--(UITextView *(^)(UIFont *))setFont;
--(UITextView *(^)(id))setDelegate;
--(UITextView *(^)(UIKeyboardType))setKeyboardType;
--(UITextView *(^)(UIReturnKeyType))setReturnKeyType;
--(UITextView *(^)(NSString *))setPlaceholder;
--(UITextView *(^)(UIEdgeInsets))setContentInsets;
-
+@property (nonatomic, copy, readonly) UITextView *(^setText)(NSString *);
+@property (nonatomic, copy, readonly) UITextView *(^setAttrText)(NSAttributedString *);
+@property (nonatomic, copy, readonly) UITextView *(^setTextColor)(UIColor *);
+@property (nonatomic, copy, readonly) UITextView *(^setFont)(UIFont *);
+@property (nonatomic, copy, readonly) UITextView *(^setDelegate)(id);
+@property (nonatomic, copy, readonly) UITextView *(^setKeyboardType)(UIKeyboardType);
+@property (nonatomic, copy, readonly) UITextView *(^setReturnKeyType)(UIReturnKeyType);
+@property (nonatomic, copy, readonly) UITextView *(^setPlaceholder)(UIKeyboardType);
+@property (nonatomic, copy, readonly) UITextView *(^setContentInsets)(UIEdgeInsets);
 @end

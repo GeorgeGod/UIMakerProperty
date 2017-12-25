@@ -122,7 +122,18 @@
         callback(gesture.view);
     }
 }
-
+-(UIView *(^)(id, SEL))setTargetAndAction {
+    return ^(id obj, SEL selector) {
+        if ([obj respondsToSelector:selector]) {
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:obj action:selector];
+            self.userInteractionEnabled = YES;
+            [self addGestureRecognizer:tap];
+        } else {
+            NSLog(@"好像没有实现 %@ 中的Action方法", NSStringFromSelector(_cmd));
+        }
+        return self;
+    };
+}
 -(UIView *(^)(UIView *))setSuperView {
     return ^(UIView *superView) {
         [superView addSubview:self];

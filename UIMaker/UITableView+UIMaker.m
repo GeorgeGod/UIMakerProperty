@@ -10,6 +10,13 @@
 
 @implementation UITableView (UIMaker)
 
++(instancetype)makerPlain {
+    return [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+}
++(instancetype)makerGrouped {
+    return [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+}
+
 /*
  -(UITableView *(^)(CGFloat))setRowHeight;
  -(UITableView *(^)(CGFloat))setHeaderHeight;

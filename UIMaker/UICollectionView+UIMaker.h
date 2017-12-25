@@ -13,83 +13,24 @@
 +(instancetype)maker;
 
 
-/**
- 设置frame
- */
--(UICollectionView *(^)(CGRect))setFrame;
-
-/**
- 设置背景色
- */
--(UICollectionView *(^)(UIColor *))setBackgroundColor;
-
-/**
- 设置透明度
- */
--(UICollectionView *(^)(CGFloat))setAlpha;
-
-/**
- 设置是否隐藏
- */
--(UICollectionView *(^)(BOOL))setHidden;
-
-/**
- 设置圆角
- */
--(UICollectionView *(^)(CGFloat))setCornerRadius;
-
-/**
- 设置边框
- */
--(UICollectionView *(^)(CGFloat, UIColor *))setBorder;
-
-/**
- 设置边框宽度
- */
--(UICollectionView *(^)(CGFloat))setBorderWidth;
-
-/**
- 设置边框颜色
- */
--(UICollectionView *(^)(UIColor *))setBorderColor;
-
-/**
- 设置tag值
- */
--(UICollectionView *(^)(NSInteger))setTag;
-
-/**
- 设置内容显示模式
- */
--(UICollectionView *(^)(UIViewContentMode))setContentMode;
-
-/**
- 设置是否可触摸
- */
--(UICollectionView *(^)(BOOL))setUserInterface;
-
-/**
- 设置是否裁剪
- */
--(UICollectionView *(^)(BOOL))setClipsToBounds;
-
-/**
- 设置是否可用
- */
--(UICollectionView *(^)(BOOL))setEnabled;
-
-/**
- 添加到父视图上
- */
--(UICollectionView *(^)(UIView *))setSuperView;
-
-
-
+@property (nonatomic, copy, readonly) UICollectionView *(^setFrame)(CGRect);
+@property (nonatomic, copy, readonly) UICollectionView *(^setBackgroundColor)(UIColor *);
+@property (nonatomic, copy, readonly) UICollectionView *(^setAlpha)(CGFloat);
+@property (nonatomic, copy, readonly) UICollectionView *(^setHidden)(BOOL);
+@property (nonatomic, copy, readonly) UICollectionView *(^setCornerRadius)(CGFloat);
+@property (nonatomic, copy, readonly) UICollectionView *(^setBorder)(CGFloat, UIColor *);
+@property (nonatomic, copy, readonly) UICollectionView *(^setBorderWidth)(CGFloat);
+@property (nonatomic, copy, readonly) UICollectionView *(^setBorderColor)(UIColor *);
+@property (nonatomic, copy, readonly) UICollectionView *(^setTag)(NSInteger);
+@property (nonatomic, copy, readonly) UICollectionView *(^setContentMode)(UIViewContentMode);
+@property (nonatomic, copy, readonly) UICollectionView *(^setUserInterface)(BOOL);
+@property (nonatomic, copy, readonly) UICollectionView *(^setClipsToBounds)(BOOL);
+//@property (nonatomic, copy, readonly) UICollectionView *(^setTapAction)(UIImageViewCallBack);
+@property (nonatomic, copy, readonly) UICollectionView *(^setSuperView)(UIView *);
 
 
 
 /*** 上面是继承UIView的 ****/
 /*** 下面才是UICollectionView独有的 ****/
--(UICollectionView *(^)(id))setDelegateAndDataSource;
-
+@property (nonatomic, copy, readonly) UICollectionView *(^setDelegateAndDataSource)(id);
 @end

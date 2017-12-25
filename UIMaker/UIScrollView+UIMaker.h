@@ -12,96 +12,36 @@
 
 +(instancetype)maker;
 
-
-/**
- 设置frame
- */
--(UIScrollView *(^)(CGRect))setFrame;
-
-/**
- 设置背景色
- */
--(UIScrollView *(^)(UIColor *))setBackgroundColor;
-
-/**
- 设置透明度
- */
--(UIScrollView *(^)(CGFloat))setAlpha;
-
-/**
- 设置是否隐藏
- */
--(UIScrollView *(^)(BOOL))setHidden;
-
-/**
- 设置圆角
- */
--(UIScrollView *(^)(CGFloat))setCornerRadius;
-
-/**
- 设置边框
- */
--(UIScrollView *(^)(CGFloat, UIColor *))setBorder;
-
-/**
- 设置边框宽度
- */
--(UIScrollView *(^)(CGFloat))setBorderWidth;
-
-/**
- 设置边框颜色
- */
--(UIScrollView *(^)(UIColor *))setBorderColor;
-
-/**
- 设置tag值
- */
--(UIScrollView *(^)(NSInteger))setTag;
-
-/**
- 设置内容显示模式
- */
--(UIScrollView *(^)(UIViewContentMode))setContentMode;
-
-/**
- 设置是否可触摸
- */
--(UIScrollView *(^)(BOOL))setUserInterface;
-
-/**
- 设置是否裁剪
- */
--(UIScrollView *(^)(BOOL))setClipsToBounds;
-
-/**
- 设置是否可用
- */
--(UIScrollView *(^)(BOOL))setEnabled;
-
-/**
- 添加到父视图上
- */
--(UIScrollView *(^)(UIView *))setSuperView;
-
-
+@property (nonatomic, copy, readonly) UIScrollView *(^setFrame)(CGRect);
+@property (nonatomic, copy, readonly) UIScrollView *(^setBackgroundColor)(UIColor *);
+@property (nonatomic, copy, readonly) UIScrollView *(^setAlpha)(CGFloat);
+@property (nonatomic, copy, readonly) UIScrollView *(^setHidden)(BOOL);
+@property (nonatomic, copy, readonly) UIScrollView *(^setCornerRadius)(CGFloat);
+@property (nonatomic, copy, readonly) UIScrollView *(^setBorder)(CGFloat, UIColor *);
+@property (nonatomic, copy, readonly) UIScrollView *(^setBorderWidth)(CGFloat);
+@property (nonatomic, copy, readonly) UIScrollView *(^setBorderColor)(UIColor *);
+@property (nonatomic, copy, readonly) UIScrollView *(^setTag)(NSInteger);
+@property (nonatomic, copy, readonly) UIScrollView *(^setContentMode)(UIViewContentMode);
+@property (nonatomic, copy, readonly) UIScrollView *(^setUserInterface)(BOOL);
+@property (nonatomic, copy, readonly) UIScrollView *(^setClipsToBounds)(BOOL);
+//@property (nonatomic, copy, readonly) UIScrollView *(^setTapAction)(UIImageViewCallBack);
+@property (nonatomic, copy, readonly) UIScrollView *(^setSuperView)(UIView *);
 
 
 
 /*** 上面是继承UIView的 ****/
 /*** 下面是UIScrollView独有的 ****/
-
--(UIScrollView *(^)(CGPoint))setContentOffset;
--(UIScrollView *(^)(CGSize))setContentSize;
--(UIScrollView *(^)(UIEdgeInsets))setContentInsets;
--(UIScrollView *(^)(id))setDelegate;
--(UIScrollView *(^)(BOOL))setBounces;
--(UIScrollView *(^)(BOOL))setAlwaysBounceVertical;
--(UIScrollView *(^)(BOOL))setAlwaysBounceHorizontal;
--(UIScrollView *(^)(BOOL))setScrollEnabled;
--(UIScrollView *(^)(BOOL))setShowsVertical;
--(UIScrollView *(^)(BOOL))setShowsHorizontal;
--(UIScrollView *(^)(UIEdgeInsets))setIndicatorInsets;
--(UIScrollView *(^)(UIScrollViewIndicatorStyle))setIndicatorStyle;
--(UIScrollView *(^)(UIScrollViewKeyboardDismissMode))setKeyboardDismissMode;
-
+@property (nonatomic, copy, readonly) UIScrollView *(^setContentOffset)(CGPoint);
+@property (nonatomic, copy, readonly) UIScrollView *(^setContentSize)(CGSize);
+@property (nonatomic, copy, readonly) UIScrollView *(^setContentInsets)(UIEdgeInsets);
+@property (nonatomic, copy, readonly) UIScrollView *(^setDelegate)(id);
+@property (nonatomic, copy, readonly) UIScrollView *(^setBounces)(BOOL);
+@property (nonatomic, copy, readonly) UIScrollView *(^setAlwaysBounceVertical)(BOOL);
+@property (nonatomic, copy, readonly) UIScrollView *(^setAlwaysBounceHorizontal)(BOOL);
+@property (nonatomic, copy, readonly) UIScrollView *(^setScrollEnabled)(BOOL);
+@property (nonatomic, copy, readonly) UIScrollView *(^setShowsVertical)(BOOL);
+@property (nonatomic, copy, readonly) UIScrollView *(^setShowsHorizontal)(BOOL);
+@property (nonatomic, copy, readonly) UIScrollView *(^setIndicatorInsets)(UIEdgeInsets);
+@property (nonatomic, copy, readonly) UIScrollView *(^setIndicatorStyle)(UIScrollViewIndicatorStyle);
+@property (nonatomic, copy, readonly) UIScrollView *(^setKeyboardDismissMode)(UIScrollViewKeyboardDismissMode);
 @end

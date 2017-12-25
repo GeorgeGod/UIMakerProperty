@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "UIMaker.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @end
 
@@ -17,34 +17,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-//    UIButton
-//    UILabel *lab = [UILabel new];
-//    lab.enabled = YES;
-//
-//    UITextField *tf = [UITextField new];
-//    tf.keyboardType = UIKeyboardTypeURL;
 
-    UIView.maker.setFrame(CGRectMake(100, 100, 100, 100)).setBackgroundColor([UIColor redColor]).setSuperView(self.view).setTapAction(^(UIView *view){
-        NSLog(@"滴滴滴");
-    });
+    UIView.maker.setFrame(CGRectMake(100, 100, 100, 100)).setBackgroundColor([UIColor redColor]).setSuperView(self.view).setAlpha(0.5);
+
+    UILabel.maker.setFrame(CGRectMake(100, 220, 100, 100)).setBackgroundColor([UIColor greenColor]).setSuperView(self.view).setText(@"ssa");
+
+    UITableView.makerGrouped.setFrame(self.view.bounds).setDelegateAndDataSource(self).setSuperView(self.view);
+        UILabel.maker.setFrame(CGRectMake(100, 200, 100, 100));
     
-//    UILabel.maker.setTextColor([UIColor whiteColor]).setFrame(CGRectMake(100, 220, 100, 100)).setBackgroundColor([UIColor greenColor]).setSuperView(self.view).setText(@"www").setTapAction(^(UILabel *lab){
-//        NSLog(@"aaa");
-//    });
-//    
-//    UIButton.maker.setTitle(@"title", UIControlStateNormal).setSuperView(self.view).setFrame(CGRectMake(100, 340, 100, 44)).setAction(^(UIButton *sender) {
-//        NSLog(@"bbb");
-//    }).setBackgroundColor([UIColor yellowColor]).setDelegate(self, @selector(btnAction:));
-//    
-//    UILabel.maker.setFrame(CGRectMake(220, 100, 50, 100)).setBackgroundColor([UIColor purpleColor]).setSuperView(self.view);
+    UIImageView.maker.setFrame(CGRectMake(100, 100, 100, 100)).setBackgroundColor([UIColor redColor]).setTapAction(^(UIImageView *iv) {
+        
+        if ([iv isKindOfClass:[UIImageView class]]) {
+            NSLog(@"---ssssss");
+        } else {
+            NSLog(@"---eeeeee");
+        }
+    }).setSuperView(self.view).setCornerRadius(50).setClipsToBounds(YES).setBorder(5, [UIColor greenColor]);
     
-    UIView.maker.setFrame(CGRectMake(100, 100, 100, 100)).setSuperView(self.view).setBackgroundColor([UIColor redColor]);
+    UIView.maker.setFrame(CGRectMake(100, 220, 100, 100)).setBackgroundColor([UIColor greenColor]).setTargetAndAction(self, @selector(btnAction:)).setSuperView(self.view).setUserInterface(YES);
 }
 
-//-(void)btnAction:(UIButton *)sender {
-//    NSLog(@"=====aa");
-//}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 10;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@""];
+}
+
+-(void)btnAction:(UIButton *)sender {
+    NSLog(@"=====aa");
+}
 
 
 @end

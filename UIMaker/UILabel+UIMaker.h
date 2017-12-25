@@ -13,94 +13,30 @@ typedef void(^UILabelCallBack)(UILabel *lab);
 
 +(instancetype)maker;
 
-
-/**
- 设置frame
- */
--(UILabel *(^)(CGRect))setFrame;
-
-/**
- 设置背景色
- */
--(UILabel *(^)(UIColor *))setBackgroundColor;
-
-/**
- 设置透明度
- */
--(UILabel *(^)(CGFloat))setAlpha;
-
-/**
- 设置是否隐藏
- */
--(UILabel *(^)(BOOL))setHidden;
-
-/**
- 设置圆角
- */
--(UILabel *(^)(CGFloat))setCornerRadius;
-
-/**
- 设置边框
- */
--(UILabel *(^)(CGFloat, UIColor *))setBorder;
-
-/**
- 设置边框宽度
- */
--(UILabel *(^)(CGFloat))setBorderWidth;
-
-/**
- 设置边框颜色
- */
--(UILabel *(^)(UIColor *))setBorderColor;
-
-/**
- 设置tag值
- */
--(UILabel *(^)(NSInteger))setTag;
-
-/**
- 设置内容显示模式
- */
--(UILabel *(^)(UIViewContentMode))setContentMode;
-
-/**
- 设置是否可触摸
- */
--(UILabel *(^)(BOOL))setUserInterface;
-
-/**
- 设置是否裁剪
- */
--(UILabel *(^)(BOOL))setClipsToBounds;
-
-/**
- 设置点击事件
- */
--(UILabel *(^)(UILabelCallBack))setTapAction;
-
-/**
- 添加到父视图上
- */
--(UILabel *(^)(UIView *))setSuperView;
-
-
-
-
-
+@property (nonatomic, copy, readonly) UILabel *(^setFrame)(CGRect);
+@property (nonatomic, copy, readonly) UILabel *(^setBackgroundColor)(UIColor *);
+@property (nonatomic, copy, readonly) UILabel *(^setAlpha)(CGFloat);
+@property (nonatomic, copy, readonly) UILabel *(^setHidden)(BOOL);
+@property (nonatomic, copy, readonly) UILabel *(^setCornerRadius)(CGFloat);
+@property (nonatomic, copy, readonly) UILabel *(^setBorder)(CGFloat, UIColor *);
+@property (nonatomic, copy, readonly) UILabel *(^setBorderWidth)(CGFloat);
+@property (nonatomic, copy, readonly) UILabel *(^setBorderColor)(UIColor *);
+@property (nonatomic, copy, readonly) UILabel *(^setTag)(NSInteger);
+@property (nonatomic, copy, readonly) UILabel *(^setContentMode)(UIViewContentMode);
+@property (nonatomic, copy, readonly) UILabel *(^setUserInterface)(BOOL);
+@property (nonatomic, copy, readonly) UILabel *(^setClipsToBounds)(BOOL);
+@property (nonatomic, copy, readonly) UILabel *(^setTapAction)(UILabelCallBack);
+@property (nonatomic, copy, readonly) UILabel *(^setTargetAndAction)(id, SEL);
+@property (nonatomic, copy, readonly) UILabel *(^setSuperView)(UIView *);
 
 /*** 上面是继承UIView的 ****/
 /*** 下面才是UILabel独有的 ****/
 
--(UILabel *(^)(NSString *))setText;
--(UILabel *(^)(UIColor *))setTextColor;
--(UILabel *(^)(UIFont *))setFont;
--(UILabel *(^)(NSTextAlignment))setTextAlignment;
--(UILabel *(^)(NSLineBreakMode))setLineBreakMode;
--(UILabel *(^)(NSInteger))setNumberOfLines;
--(UILabel *(^)(BOOL))setEnabled;
--(UILabel *(^)(BOOL))setAdjust;
-
-
-
+@property (nonatomic, copy, readonly) UILabel *(^setText)(NSString *);
+@property (nonatomic, copy, readonly) UILabel *(^setFont)(UIFont *);
+@property (nonatomic, copy, readonly) UILabel *(^setTextAlignment)(NSTextAlignment);
+@property (nonatomic, copy, readonly) UILabel *(^setLineBreakMode)(NSLineBreakMode);
+@property (nonatomic, copy, readonly) UILabel *(^setNumberOfLines)(NSInteger);
+@property (nonatomic, copy, readonly) UILabel *(^setEnabled)(BOOL);
+@property (nonatomic, copy, readonly) UILabel *(^setAdjust)(BOOL);
 @end

@@ -11,107 +11,49 @@
 @interface UITableView (UIMaker)
 
 +(instancetype)maker;
++(instancetype)makerPlain;
++(instancetype)makerGrouped;
 
-
-/**
- 设置frame
- */
--(UITableView *(^)(CGRect))setFrame;
-
-/**
- 设置背景色
- */
--(UITableView *(^)(UIColor *))setBackgroundColor;
-
-/**
- 设置透明度
- */
--(UITableView *(^)(CGFloat))setAlpha;
-
-/**
- 设置是否隐藏
- */
--(UITableView *(^)(BOOL))setHidden;
-
-/**
- 设置圆角
- */
--(UITableView *(^)(CGFloat))setCornerRadius;
-
-/**
- 设置边框
- */
--(UITableView *(^)(CGFloat, UIColor *))setBorder;
-
-/**
- 设置边框宽度
- */
--(UITableView *(^)(CGFloat))setBorderWidth;
-
-/**
- 设置边框颜色
- */
--(UITableView *(^)(UIColor *))setBorderColor;
-
-/**
- 设置tag值
- */
--(UITableView *(^)(NSInteger))setTag;
-
-/**
- 设置内容显示模式
- */
--(UITableView *(^)(UIViewContentMode))setContentMode;
-
-/**
- 设置是否可触摸
- */
--(UITableView *(^)(BOOL))setUserInterface;
-
-/**
- 设置是否裁剪
- */
--(UITableView *(^)(BOOL))setClipsToBounds;
-
-/**
- 设置是否可用
- */
--(UITableView *(^)(BOOL))setEnabled;
-
-/**
- 添加到父视图上
- */
--(UITableView *(^)(UIView *))setSuperView;
-
-
-
+@property (nonatomic, copy, readonly) UITableView *(^setFrame)(CGRect);
+@property (nonatomic, copy, readonly) UITableView *(^setBackgroundColor)(UIColor *);
+@property (nonatomic, copy, readonly) UITableView *(^setAlpha)(CGFloat);
+@property (nonatomic, copy, readonly) UITableView *(^setHidden)(BOOL);
+@property (nonatomic, copy, readonly) UITableView *(^setCornerRadius)(CGFloat);
+@property (nonatomic, copy, readonly) UITableView *(^setBorder)(CGFloat, UIColor *);
+@property (nonatomic, copy, readonly) UITableView *(^setBorderWidth)(CGFloat);
+@property (nonatomic, copy, readonly) UITableView *(^setBorderColor)(UIColor *);
+@property (nonatomic, copy, readonly) UITableView *(^setTag)(NSInteger);
+@property (nonatomic, copy, readonly) UITableView *(^setContentMode)(UIViewContentMode);
+@property (nonatomic, copy, readonly) UITableView *(^setUserInterface)(BOOL);
+@property (nonatomic, copy, readonly) UITableView *(^setClipsToBounds)(BOOL);
+//@property (nonatomic, copy, readonly) UITableView *(^setTapAction)(UIImageViewCallBack);
+@property (nonatomic, copy, readonly) UITableView *(^setSuperView)(UIView *);
 
 
 
 /*** 上面是继承UIView的 ****/
 /*** 下面是UIScrollView独有的 ****/
--(UITableView *(^)(CGPoint))setContentOffset;
--(UITableView *(^)(CGSize))setContentSize;
--(UITableView *(^)(UIEdgeInsets))setContentInsets;
--(UITableView *(^)(BOOL))setBounces;
--(UITableView *(^)(BOOL))setAlwaysBounceVertical;
--(UITableView *(^)(BOOL))setAlwaysBounceHorizontal;
--(UITableView *(^)(BOOL))setScrollEnabled;
--(UITableView *(^)(BOOL))setShowsVertical;
--(UITableView *(^)(BOOL))setShowsHorizontal;
--(UITableView *(^)(UIEdgeInsets))setIndicatorInsets;
--(UITableView *(^)(UIScrollViewIndicatorStyle))setIndicatorStyle;
--(UITableView *(^)(UIScrollViewKeyboardDismissMode))setKeyboardDismissMode;
+@property (nonatomic, copy, readonly) UITableView *(^setContentOffset)(CGPoint);
+@property (nonatomic, copy, readonly) UITableView *(^setContentSize)(CGSize);
+@property (nonatomic, copy, readonly) UITableView *(^setContentInsets)(UIEdgeInsets);
+@property (nonatomic, copy, readonly) UITableView *(^setBounces)(BOOL);
+@property (nonatomic, copy, readonly) UITableView *(^setAlwaysBounceVertical)(BOOL);
+@property (nonatomic, copy, readonly) UITableView *(^setAlwaysBounceHorizontal)(BOOL);
+@property (nonatomic, copy, readonly) UITableView *(^setScrollEnabled)(BOOL);
+@property (nonatomic, copy, readonly) UITableView *(^setShowsVertical)(BOOL);
+@property (nonatomic, copy, readonly) UITableView *(^setShowsHorizontal)(BOOL);
+@property (nonatomic, copy, readonly) UITableView *(^setIndicatorInsets)(UIEdgeInsets);
+@property (nonatomic, copy, readonly) UITableView *(^setIndicatorStyle)(UIScrollViewIndicatorStyle);
+@property (nonatomic, copy, readonly) UITableView *(^setKeyboardDismissMode)(UIScrollViewKeyboardDismissMode);
+
 
 
 /*** 下面才是UITableView独有的 ****/
--(UITableView *(^)(id))setDelegateAndDataSource;
--(UITableView *(^)(CGFloat))setRowHeight;
--(UITableView *(^)(CGFloat))setHeaderHeight;
--(UITableView *(^)(CGFloat))setFooterHeight;
--(UITableView *(^)(UITableViewCellSeparatorStyle))setSeparatorStyle;
-
--(UITableView *(^)(UIView *))setHeaderView;
--(UITableView *(^)(UIView *))setFooterView;
-
+@property (nonatomic, copy, readonly) UITableView *(^setDelegateAndDataSource)(id);
+@property (nonatomic, copy, readonly) UITableView *(^setRowHeight)(CGFloat);
+@property (nonatomic, copy, readonly) UITableView *(^setHeaderHeight)(CGFloat);
+@property (nonatomic, copy, readonly) UITableView *(^setFooterHeight)(CGFloat);
+@property (nonatomic, copy, readonly) UITableView *(^setSeparatorStyle)(UITableViewCellSeparatorStyle);
+@property (nonatomic, copy, readonly) UITableView *(^setHeaderView)(UIView *);
+@property (nonatomic, copy, readonly) UITableView *(^setFooterView)(UIView *);
 @end

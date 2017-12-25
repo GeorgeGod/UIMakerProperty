@@ -14,102 +14,36 @@ typedef void(^UITextFieldCallBack)(UITextField *textField);
 
 +(instancetype)maker;
 
-
-/**
- 设置frame
- */
--(UITextField *(^)(CGRect))setFrame;
-
-/**
- 设置背景色
- */
--(UITextField *(^)(UIColor *))setBackgroundColor;
-
-/**
- 设置透明度
- */
--(UITextField *(^)(CGFloat))setAlpha;
-
-/**
- 设置是否隐藏
- */
--(UITextField *(^)(BOOL))setHidden;
-
-/**
- 设置圆角
- */
--(UITextField *(^)(CGFloat))setCornerRadius;
-
-/**
- 设置边框
- */
--(UITextField *(^)(CGFloat, UIColor *))setBorder;
-
-/**
- 设置边框宽度
- */
--(UITextField *(^)(CGFloat))setBorderWidth;
-
-/**
- 设置边框颜色
- */
--(UITextField *(^)(UIColor *))setBorderColor;
-
-/**
- 设置tag值
- */
--(UITextField *(^)(NSInteger))setTag;
-
-/**
- 设置内容显示模式
- */
--(UITextField *(^)(UIViewContentMode))setContentMode;
-
-/**
- 设置是否可触摸
- */
--(UITextField *(^)(BOOL))setUserInterface;
-
-/**
- 设置是否裁剪
- */
--(UITextField *(^)(BOOL))setClipsToBounds;
-
-/**
- 设置是否可用
- */
--(UITextField *(^)(BOOL))setEnabled;
-
-/**
- 添加到父视图上
- */
--(UITextField *(^)(UIView *))setSuperView;
-
-
-
-
+@property (nonatomic, copy, readonly) UITextField *(^setFrame)(CGRect);
+@property (nonatomic, copy, readonly) UITextField *(^setBackgroundColor)(UIColor *);
+@property (nonatomic, copy, readonly) UITextField *(^setAlpha)(CGFloat);
+@property (nonatomic, copy, readonly) UITextField *(^setHidden)(BOOL);
+@property (nonatomic, copy, readonly) UITextField *(^setCornerRadius)(CGFloat);
+@property (nonatomic, copy, readonly) UITextField *(^setBorder)(CGFloat, UIColor *);
+@property (nonatomic, copy, readonly) UITextField *(^setBorderWidth)(CGFloat);
+@property (nonatomic, copy, readonly) UITextField *(^setBorderColor)(UIColor *);
+@property (nonatomic, copy, readonly) UITextField *(^setTag)(NSInteger);
+@property (nonatomic, copy, readonly) UITextField *(^setContentMode)(UIViewContentMode);
+@property (nonatomic, copy, readonly) UITextField *(^setUserInterface)(BOOL);
+@property (nonatomic, copy, readonly) UITextField *(^setClipsToBounds)(BOOL);
+//@property (nonatomic, copy, readonly) UITextField *(^setTapAction)(UITextFieldCallBack);
+@property (nonatomic, copy, readonly) UITextField *(^setSuperView)(UIView *);
 
 
 /*** 上面是继承UIView的 ****/
 /*** 下面才是UITextField独有的 ****/
 
--(UITextField *(^)(NSString *))setText;
--(UITextField *(^)(NSAttributedString *))setAttrText;
--(UITextField *(^)(UIColor *))setTextColor;
--(UITextField *(^)(UIFont *))setFont;
--(UITextField *(^)(NSTextAlignment))setTextAlignment;
-
-/**
- 设置代理
- */
--(UITextField *(^)(id))setDelegate;
--(UITextField *(^)(id, UITextFieldCallBack))setEditChangedDelegate;
-
--(UITextField *(^)(UIKeyboardType))setKeyboardType;
--(UITextField *(^)(UIReturnKeyType))setReturnKeyType;
--(UITextField *(^)(UITextFieldViewMode))setClearMode;
-
--(UITextField *(^)(NSString *))setPlaceholder;
--(UITextField *(^)(UIView *, UITextFieldViewMode))setLeftView;
--(UITextField *(^)(UIView *, UITextFieldViewMode))setRightView;
+@property (nonatomic, copy, readonly) UITextField *(^setText)(NSString *);
+@property (nonatomic, copy, readonly) UITextField *(^setAttrText)(NSAttributedString *);
+@property (nonatomic, copy, readonly) UITextField *(^setTextColor)(UIColor *);
+@property (nonatomic, copy, readonly) UITextField *(^setFont)(UIFont *);
+@property (nonatomic, copy, readonly) UITextField *(^setTextAlignment)(NSTextAlignment);
+@property (nonatomic, copy, readonly) UITextField *(^setDelegate)(id);
+@property (nonatomic, copy, readonly) UITextField *(^setEditChangedDelegate)(id, UITextFieldCallBack);
+@property (nonatomic, copy, readonly) UITextField *(^setKeyboardType)(UIKeyboardType);
+@property (nonatomic, copy, readonly) UITextField *(^setReturnKeyType)(UIReturnKeyType);
+@property (nonatomic, copy, readonly) UITextField *(^setClearMode)(UITextFieldViewMode);
+@property (nonatomic, copy, readonly) UITextField *(^setPlaceholder)(NSString *);
+@property (nonatomic, copy, readonly) UITextField *(^setLeftView)(UIView *, UITextFieldViewMode);
+@property (nonatomic, copy, readonly) UITextField *(^setRightView)(UIView *, UITextFieldViewMode);
 @end

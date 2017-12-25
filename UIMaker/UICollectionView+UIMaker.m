@@ -10,6 +10,12 @@
 
 @implementation UICollectionView (UIMaker)
 
++(instancetype)maker {
+    UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
+    UICollectionView *col = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+    return col;
+}
+
 -(UICollectionView *(^)(id))setDelegateAndDataSource {
     return ^(id obj) {
         self.delegate = obj;

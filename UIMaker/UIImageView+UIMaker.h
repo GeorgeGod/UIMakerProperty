@@ -8,107 +8,33 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^UIImageViewCallBack)(UIImageView *imageView);
 @interface UIImageView (UIMaker)
 
 +(instancetype)maker;
 
-
-/**
- 设置frame
- */
--(UIImageView *(^)(CGRect))setFrame;
-
-/**
- 设置背景色
- */
--(UIImageView *(^)(UIColor *))setBackgroundColor;
-
-/**
- 设置透明度
- */
--(UIImageView *(^)(CGFloat))setAlpha;
-
-/**
- 设置是否隐藏
- */
--(UIImageView *(^)(BOOL))setHidden;
-
-/**
- 设置圆角
- */
--(UIImageView *(^)(CGFloat))setCornerRadius;
-
-/**
- 设置边框
- */
--(UIImageView *(^)(CGFloat, UIColor *))setBorder;
-
-/**
- 设置边框宽度
- */
--(UIImageView *(^)(CGFloat))setBorderWidth;
-
-/**
- 设置边框颜色
- */
--(UIImageView *(^)(UIColor *))setBorderColor;
-
-/**
- 设置tag值
- */
--(UIImageView *(^)(NSInteger))setTag;
-
-/**
- 设置内容显示模式
- */
--(UIImageView *(^)(UIViewContentMode))setContentMode;
-
-/**
- 设置是否可触摸
- */
--(UIImageView *(^)(BOOL))setUserInterface;
-
-/**
- 设置是否裁剪
- */
--(UIImageView *(^)(BOOL))setClipsToBounds;
-
-/**
- 设置点击事件
- */
--(UIImageView *(^)(UIImageView *))setTapAction;
-
-/**
- 添加到父视图上
- */
--(UIImageView *(^)(UIView *))setSuperView;
-
+@property (nonatomic, copy, readonly) UIImageView *(^setFrame)(CGRect);
+@property (nonatomic, copy, readonly) UIImageView *(^setBackgroundColor)(UIColor *);
+@property (nonatomic, copy, readonly) UIImageView *(^setAlpha)(CGFloat);
+@property (nonatomic, copy, readonly) UIImageView *(^setHidden)(BOOL);
+@property (nonatomic, copy, readonly) UIImageView *(^setCornerRadius)(CGFloat);
+@property (nonatomic, copy, readonly) UIImageView *(^setBorder)(CGFloat, UIColor *);
+@property (nonatomic, copy, readonly) UIImageView *(^setBorderWidth)(CGFloat);
+@property (nonatomic, copy, readonly) UIImageView *(^setBorderColor)(UIColor *);
+@property (nonatomic, copy, readonly) UIImageView *(^setTag)(NSInteger);
+@property (nonatomic, copy, readonly) UIImageView *(^setContentMode)(UIViewContentMode);
+@property (nonatomic, copy, readonly) UIImageView *(^setUserInterface)(BOOL);
+@property (nonatomic, copy, readonly) UIImageView *(^setClipsToBounds)(BOOL);
+@property (nonatomic, copy, readonly) UIImageView *(^setTapAction)(UIImageViewCallBack);
+@property (nonatomic, copy, readonly) UIImageView *(^setTargetAndAction)(id, SEL);
+@property (nonatomic, copy, readonly) UIImageView *(^setSuperView)(UIView *);
 
 
 
 /*** 上面是继承UIView的 ****/
 /*** 下面才是UIImageView独有的 ****/
-
-/**
- 设置图片的名字
- */
--(UIImageView *(^)(NSString *))setImageName;
-
-/**
- 设置图片
- */
--(UIImageView *(^)(UIImage *))setImage;
-
-/**
- 设置动画数组
- */
--(UIImageView *(^)(NSArray<UIImage *> *))setImages;
-
-/**
- 设置动画的时间和次数
- */
--(UIImageView *(^)(NSTimeInterval, NSInteger))setAnimation;
-
-
-
+@property (nonatomic, copy, readonly) UIImageView *(^setImageName)(NSString *);
+@property (nonatomic, copy, readonly) UIImageView *(^setImage)(UIImage *);
+@property (nonatomic, copy, readonly) UIImageView *(^setImages)(NSArray<UIImage *> *);
+@property (nonatomic, copy, readonly) UIImageView *(^setAnimation)(NSTimeInterval, NSInteger);
 @end
